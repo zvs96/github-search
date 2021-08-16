@@ -1,0 +1,22 @@
+<div class="container">
+  <section class="search">
+    <app-search
+      [query]="query$ | async"
+      [loading]="loading$ | async"
+      (search)="onSearch($event)"
+    ></app-search>
+    <app-search-filters
+      [filters]="searchFilter$ | async"
+      (changeFilters)="onSearchFiltersChange($event)"
+    ></app-search-filters>
+  </section>
+  <section class="items">
+    <app-search-items
+      [loading]="loading$ | async"
+      [filtersInput]="filterInput$ | async"
+      [items]="repositories$ | async"
+      [total_count]="totalCount$ | async"
+      (changeFilters)="onFiltersChange($event)"
+    ></app-search-items>
+  </section>
+</div>

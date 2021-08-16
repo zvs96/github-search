@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  margin: 50px;
+  max-width: 600px;
+  width: 100%;
+}
+
+p, ul {
+  margin: 0;
+}
+
+ul {
+  margin-top: 16px;
+  color: #757575;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+}

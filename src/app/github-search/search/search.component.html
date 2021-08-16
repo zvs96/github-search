@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>Search...</mat-label>
+  <input type="text" matInput [formControl]="searchControl">
+  <mat-icon matPrefix>search</mat-icon>
+  <mat-spinner matSuffix *ngIf="loading" diameter="24"></mat-spinner>
+</mat-form-field>
+
+

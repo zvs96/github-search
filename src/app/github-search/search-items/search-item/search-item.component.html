@@ -1,0 +1,11 @@
+<div class="title">
+  <mat-icon>link</mat-icon>
+  <a [routerLink]="['/', item.full_name]">{{item.full_name}}</a>
+</div>
+<p *ngIf="item.description">
+  {{item.description}}
+</p>
+<ul>
+  <li>Language: {{item.language}}</li>
+  <li>Updated At: {{item.updated_at | date:'dd MMM, YYYY HH:mm' }}</li>
+</ul>

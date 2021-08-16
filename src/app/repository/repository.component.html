@@ -1,0 +1,29 @@
+<div class="container">
+  <ng-container *ngIf="loading$ | async; else renderData">
+    <div class="loading">
+      <mat-spinner diameter="24"></mat-spinner>
+      <span>Loading...</span>
+    </div>
+  </ng-container>
+
+  <ng-template #renderData>
+
+    <ng-container *ngIf="repository$ | async as repo">
+      <div class="title">
+        <h3>{{repo.full_name}}</h3>
+      </div>
+      <p *ngIf="repo.description">
+        {{repo.description}}
+      </p>
+      <ul>
+        <li>Home Page: <a [href]="repo.homepage" target="_blank">{{repo.homepage}}</a></li>
+        <li>Stars: {{repo.stargazers_count}}</li>
+        <li>Forks: {{repo.forks_count}}</li>
+        <li>Language: {{repo.language}}</li>
+        <li>Disabled: {{repo.disabled ? 'Yes':'No' }}</li>
+        <li>Archived: {{repo.archived ? 'Yes':'No' }}</li>
+        <li>Updated At: {{repo.updated_at | date: 'dd MMM, YYYY HH:mm'}}</li>
+      </ul>
+    </ng-container>
+  </ng-template>
+</div>

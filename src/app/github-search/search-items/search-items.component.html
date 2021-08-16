@@ -1,0 +1,23 @@
+<ng-container *ngIf="loading; else renderData">
+  <p class="loading">
+    Loading...
+  </p>
+</ng-container>
+<ng-template #renderData>
+  <ng-container *ngIf="total_count; else noResult">
+    <app-search-item *ngFor="let item of items" [item]="item"></app-search-item>
+
+    <mat-paginator
+      [length]="total_count"
+      [pageSize]="filtersInput?.per_page"
+      (page)="onPageChange($event)"
+      aria-label="Select page">
+    </mat-paginator>
+  </ng-container>
+
+  <ng-template #noResult>
+    <p class="no-result">
+      No data.
+    </p>
+  </ng-template>
+</ng-template>

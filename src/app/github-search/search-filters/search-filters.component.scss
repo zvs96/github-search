@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  border: 1px solid gray;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 6px;
+
+  mat-select {
+    margin: 6px;
+  }
+
+  ::ng-deep {
+    .mat-form-field-infix {
+      padding: .5em 0;
+    }
+  }
+}
